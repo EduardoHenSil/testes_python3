@@ -22,10 +22,8 @@ def spin(msg):
 
 @asyncio.coroutine
 def slow_function():
-    # finge que espera bastante tempo para E/S
     yield from asyncio.sleep(3)
     return 42
-
 
 @asyncio.coroutine
 def supervisor():
@@ -43,4 +41,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
