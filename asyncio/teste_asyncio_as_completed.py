@@ -14,7 +14,6 @@ url_list = ['https://images.livrariasaraiva.com.br/imagemnet/imagem.aspx/?pro_id
             'https://jovemnerd.com.br/wp-content/uploads/2017/04/rick-morty-760x428.jpeg'
 ]
 
-@asyncio.coroutine
 async def download_image(url):
     async with aiohttp.ClientSession() as session:
         async with session.get(url) as response:
@@ -29,7 +28,6 @@ async def download_image(url):
     return image
 
 
-@asyncio.coroutine
 async def downloader(url_list):
     counter = 0
     downloads = [download_image(url) for url in url_list]
@@ -50,4 +48,4 @@ if __name__ == '__main__':
     loop.run_until_complete(downloader(url_list))
     elapsed = time.time() - t0
     print("Executado em {:.2f}s".format(elapsed))
-    loop.close()
+    #loop.close()
