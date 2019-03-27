@@ -18,7 +18,7 @@ if not os.path.exists(FOLDER):
 def load():
     if not os.path.exists(JSON):
         msg = 'downloading {} to {}'.format(URL, JSON)
-        warning.warn(msg)
+        warnings.warn(msg)
         with urlopen(URL) as remote, open(JSON, 'wb') as local:
             local.write(remote.read())
 
