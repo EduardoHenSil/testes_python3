@@ -105,3 +105,4 @@ venv.bak/
 
 # Custom
 asyncio/server/charfinder_index.pickle
+*.idea/
